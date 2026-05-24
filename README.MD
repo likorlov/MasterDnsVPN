@@ -6,6 +6,8 @@
 This system is designed around compatibility with many resolver behaviors and harsh network conditions, with the goal of preserving the highest possible stability and data delivery even in the worst cases.
 
 > **Personal note:** I forked this repo primarily to study the custom ARQ implementation and the multipath resolver logic. The comparison table below was a big part of why I chose this over DNSTT for my research.
+>
+> **Study focus:** The ARQ retransmission timing and the resolver duplication strategy are the two areas I'm digging into most. See my notes in `docs/research-notes.md` (WIP).
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/masterking32/MasterDnsVPN) [![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/5c7b2ce0-0af6-4648-8ded-fd1e847096cd.svg)](https://oosmetrics.com/repo/masterking32/MasterDnsVPN)
 
@@ -28,6 +30,4 @@ This system is designed around compatibility with many resolver behaviors and ha
 | SOCKS5 support | Yes | Yes | Optimized for SOCKS5 / SOCKS4 with reduced SOCKS overhead |
 | Shadowsocks support | ✅ | ❌ | Indirectly: TCP Forwarding mode can carry TCP-based protocols<br>e.g. Shadowsocks, VLESS/VMess, etc. |
 | Real multipath | Yes (QUIC multipath) | ❌ | Yes (multi-resolver + duplication) |
-| Adaptive routing | Limited | ❌ | Advanced (latency/loss based) |
-| Design goal | High speed and efficiency | Simplicity and stability | Surviving the harshest networks — stability, speed, and efficiency |
-| Implementation language | Rust | Go | Main ve
+| Adaptive routing | Limited | ❌ | Advanc
