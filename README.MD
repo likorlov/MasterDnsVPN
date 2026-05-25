@@ -10,6 +10,8 @@ This system is designed around compatibility with many resolver behaviors and ha
 > **Study focus:** The ARQ retransmission timing and the resolver duplication strategy are the two areas I'm digging into most. See my notes in `docs/research-notes.md` (WIP).
 >
 > **TODO:** Cross-reference the ~88% header overhead reduction claim against the actual packet captures in `docs/research-notes.md` once I have enough samples collected.
+>
+> **TODO:** Verify the ~9× speed claim vs DNSTT — my early packet captures suggest the gap narrows significantly under high latency (>200ms RTT). Worth documenting in `docs/research-notes.md`.
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/masterking32/MasterDnsVPN) [![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/5c7b2ce0-0af6-4648-8ded-fd1e847096cd.svg)](https://oosmetrics.com/repo/masterking32/MasterDnsVPN)
 
@@ -29,5 +31,3 @@ This system is designed around compatibility with many resolver behaviors and ha
 | Multi-resolver support | Yes (multipath) | ❌ | Yes — advanced (multi-resolver + duplication) |
 | Resilience under heavy censorship | Good | Medium | Very strong (a core project goal) |
 | Setup complexity | Medium | Simple | Easier installation<br>More complex only if you heavily customize advanced settings |
-| SOCKS5 support | Yes | Yes | Optimized for SOCKS5 / SOCKS4 with reduced SOCKS overhead |
-| Shadowsocks support | ✅ | ❌ | Indirectly: TCP Forwarding mode can carry TCP-bas
