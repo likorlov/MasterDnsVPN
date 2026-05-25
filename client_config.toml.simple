@@ -33,6 +33,8 @@ DATA_ENCRYPTION_METHOD = 5
 # Shared encryption key.
 # Required on the client.
 # Must match the server-side key file contents.
+# Personal note: never commit a real key here; load it from an env var or
+# a secrets manager before running. This empty string is just a placeholder.
 ENCRYPTION_KEY = ""
 
 # ------------------------------------------------------------------------------
@@ -63,6 +65,7 @@ LISTEN_PORT = 1080
 # This protects the local proxy itself, not the remote server.
 # Personal note: enabling auth since I sometimes bind to 0.0.0.0 on my home
 # server and don't want the proxy open to everyone on the LAN.
+# Remember to change the default credentials below before deploying!
 SOCKS5_AUTH = true
 SOCKS5_USER = "master_dns_vpn"
 SOCKS5_PASS = "master_dns_vpn"
@@ -71,7 +74,4 @@ SOCKS5_PASS = "master_dns_vpn"
 # 3) Local DNS Service
 # What this section does:
 # - Controls the optional built-in local DNS listener.
-# - Controls local DNS cache size, TTL, pending timeout, and fragment assembly.
-# ------------------------------------------------------------------------------
-
-# When true, the client exposes a local DNS serv
+# - Controls local DNS cache size, TTL, pending timeout, and fragment as
