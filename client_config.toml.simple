@@ -35,6 +35,8 @@ DATA_ENCRYPTION_METHOD = 5
 # Must match the server-side key file contents.
 # Personal note: never commit a real key here; load it from an env var or
 # a secrets manager before running. This empty string is just a placeholder.
+# To load from env: run `export ENCRYPTION_KEY=$(cat ~/.mdvpn_key)` before
+# starting the client, then substitute the value here or use a wrapper script.
 ENCRYPTION_KEY = ""
 
 # ------------------------------------------------------------------------------
@@ -68,10 +70,8 @@ LISTEN_PORT = 1080
 # Remember to change the default credentials below before deploying!
 SOCKS5_AUTH = true
 SOCKS5_USER = "master_dns_vpn"
-SOCKS5_PASS = "master_dns_vpn"
+# Personal note: changed password to something stronger than the default.
+# Using a longer passphrase-style password here as a reminder to set a real one.
+SOCKS5_PASS = "change_me_before_deploying"
 
-# ------------------------------------------------------------------------------
-# 3) Local DNS Service
-# What this section does:
-# - Controls the optional built-in local DNS listener.
-# - Controls local DNS cache size, TTL, pending timeout, and fragment as
+# -----------------------------------
