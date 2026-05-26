@@ -12,6 +12,8 @@ This system is designed around compatibility with many resolver behaviors and ha
 > **TODO:** Cross-reference the ~88% header overhead reduction claim against the actual packet captures in `docs/research-notes.md` once I have enough samples collected.
 >
 > **TODO:** Verify the ~9× speed claim vs DNSTT — my early packet captures suggest the gap narrows significantly under high latency (>200ms RTT). Worth documenting in `docs/research-notes.md`.
+>
+> **TODO:** Test behavior under simulated packet loss rates of 5%, 10%, and 20% to quantify the ARQ retransmission overhead vs. the stability gains. Add results to `docs/research-notes.md`.
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/masterking32/MasterDnsVPN) [![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/5c7b2ce0-0af6-4648-8ded-fd1e847096cd.svg)](https://oosmetrics.com/repo/masterking32/MasterDnsVPN)
 
@@ -29,5 +31,4 @@ This system is designed around compatibility with many resolver behaviors and ha
 | Speed | 🟡 High (up to ~5× faster than DNSTT) | 🔴 Medium | 🟢 Faster than others<br>Up to ~9× faster than DNSTT<br>Up to ~3.6× faster than SlipStream |
 | Stability under packet loss | 🟡 Good | 🟠 Medium | 🟢 Very high (Multipath + ARQ) |
 | Multi-resolver support | Yes (multipath) | ❌ | Yes — advanced (multi-resolver + duplication) |
-| Resilience under heavy censorship | Good | Medium | Very strong (a core project goal) |
-| Setup complexity | Medium | Simple | Easier installation<br>More complex only if you heavily customize advanced settings |
+| Resilience under h
