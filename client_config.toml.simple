@@ -69,9 +69,5 @@ LISTEN_PORT = 1080
 # server and don't want the proxy open to everyone on the LAN.
 # Remember to change the default credentials below before deploying!
 SOCKS5_AUTH = true
-SOCKS5_USER = "master_dns_vpn"
-# Personal note: changed password to something stronger than the default.
-# Using a longer passphrase-style password here as a reminder to set a real one.
-SOCKS5_PASS = "change_me_before_deploying"
-
-# -----------------------------------
+SOCKS5_AUTH_USERNAME = "user"
+SOCKS5_AUTH_PASSWORD = "changeme"
